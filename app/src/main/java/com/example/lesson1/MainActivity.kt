@@ -15,19 +15,5 @@ private val binding:ActivityMainBinding by  lazy {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
-        viewModel = ViewModelProvider(this)[MainViewModel::class.java]
-
-        binding.btnCount.setOnClickListener {
-            viewModel.increment()
-            //var i = 0
-        }
-        viewModel.counterLV.observe(this){id ->
-            binding.resultText.text = id.toString()
-
-        }
-
-
-
     }
 }
